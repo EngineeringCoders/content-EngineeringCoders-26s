@@ -1,9 +1,7 @@
 {
   "modules": {},
   "general": {
-    "pages": [
-      "week-1-dev-environment-terraform-first-cloud-deploy"
-    ],
+    "pages": [],
     "slides": []
   }
 }
