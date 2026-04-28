@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 85%;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #333;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<blockquote>
+<p><strong>Pillar 1 — Foundations</strong> | Weekend 1 | 3 Hours<br><em>Tags: <code>int</code> <code>float</code> <code>complex</code> <code>f-strings</code> <code>walrus :=</code> <code>bitwise</code> <code>type()</code> <code>id()</code></em></p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">🎯 What You&#39;ll Learn</h2>
+<p>By the end of this session you will:</p>
+<ul>
+<li>Understand how Python represents <strong>every kind of data</strong> (numbers, text, booleans)</li>
+<li>Write clean, expressive code using <strong>f-strings</strong> and the <strong>walrus operator</strong></li>
+<li>Know the difference between <code>==</code> and <code>is</code>, and why it matters in real codebases</li>
+<li>Use <strong>all Python operators</strong> — arithmetic, comparison, logical, bitwise, identity</li>
+</ul>
+<hr>
+<h2 style="background-color: #FBF3DB;">🧠 Trainer Note — Start With a Question</h2>
+<blockquote>
+<p><strong>Ask the class:</strong> What happens when you type <code>1 + &quot;1&quot;</code> in JavaScript?<br><em>(Answer: <code>&quot;11&quot;</code> — it silently converts)</em>  </p>
+<p>Then run this in Python:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">1 + &quot;1&quot;   # TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</code></pre></div></div>
+<p><strong>Key insight:</strong> Python refuses to guess. It forces <em>you</em> to be explicit. That&#39;s not a bug — it&#39;s a feature. Python is the strict teacher, not the permissive one.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">1️⃣ Variables &amp; Assignment</h2>
+<p>A variable in Python is a <strong>label</strong> (name) that points to an object in memory. You&#39;re not declaring memory — Python&#39;s garbage collector manages that.</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span></div><pre><code class="language-python"># Simple assignment
+name = &quot;Praveen&quot;
+age = 28
+height = 5.9
+
+# Multiple assignment on one line
+x = y = z = 0
+
+# Tuple unpacking (swap without temp variable!)
+a, b = 10, 20
+a, b = b, a       # a=20, b=10 now — very Pythonic
+
+# Augmented assignment
+score = 100
+score += 10       # score is now 110
+score *= 2        # score is now 220</code></pre></div></div>
+<h3>🔍 What <code>id()</code> tells you</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span></div><pre><code class="language-python">x = 1000
+y = 1000
+print(id(x), id(y))     # Different ids — different objects
+print(x == y)            # True  (same value)
+print(x is y)            # False (different objects)
+
+# ⚠️ Python caches small integers (-5 to 256)
+a = 5
+b = 5
+print(a is b)            # True — same cached object!</code></pre></div></div>
+<blockquote>
+<p><strong>💡 Tip:</strong> Use <code>==</code> to compare <strong>values</strong>. Use <code>is</code> only to compare with <code>None</code>, <code>True</code>, <code>False</code> — never for general equality.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">2️⃣ Number Types</h2>
+<p>Python has three numeric types built-in:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>int</code></td>
+<td><code>42</code>, <code>-7</code>, <code>1_000_000</code></td>
+<td>Whole numbers, no size limit</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>3.14</code>, <code>-0.001</code>, <code>1.5e10</code></td>
+<td>Decimals, IEEE 754</td>
+</tr>
+<tr>
+<td><code>complex</code></td>
+<td><code>3+4j</code>, <code>complex(3, 4)</code></td>
+<td>Signal processing, math</td>
+</tr>
+</tbody></table>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span></div><pre><code class="language-python"># int — unlimited precision
+big = 2 ** 100
+print(big)                          # 1267650600228229401496703205376
+
+# Underscores for readability (Python 3.6+)
+million = 1_000_000
+pi_approx = 3.141_592_653
+
+# float precision warning
+print(0.1 + 0.2)                   # 0.30000000000000004  ← NOT 0.3!
+print(round(0.1 + 0.2, 2))        # 0.3  ← use round() or Decimal
+
+# complex
+c = 3 + 4j
+print(c.real)    # 3.0
+print(c.imag)    # 4.0
+print(abs(c))    # 5.0  (magnitude = √(3²+4²))</code></pre></div></div>
+<h3>🔢 Integer in different bases</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span></div><pre><code class="language-python">binary  = 0b1010      # = 10  (prefix 0b)
+octal   = 0o12        # = 10  (prefix 0o)
+hex_val = 0xA         # = 10  (prefix 0x)
+
+# Convert back
+print(bin(10))    # &#39;0b1010&#39;
+print(oct(10))    # &#39;0o12&#39;
+print(hex(10))    # &#39;0xa&#39;</code></pre></div></div>
+<blockquote>
+<p>⚠️ <strong>Gotcha:</strong> <code>0.1 + 0.2 != 0.3</code> in Python (and every language using IEEE 754 floats). For financial math, use <code>from decimal import Decimal</code>.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">3️⃣ Strings &amp; f-strings</h2>
+<p>Strings in Python are <strong>immutable sequences of Unicode characters</strong>.</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><pre><code class="language-python"># Three ways to create strings
+s1 = &#39;single quotes&#39;
+s2 = &quot;double quotes&quot;
+s3 = &quot;&quot;&quot;triple quotes
+        span multiple
+        lines&quot;&quot;&quot;
+
+# Raw strings — backslash is literal
+path = r&quot;C:\Users\Praveen\Documents&quot;   # No escape sequences</code></pre></div></div>
+<h3>✨ f-strings (Python 3.6+) — The Modern Way</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span></div><pre><code class="language-python">name = &quot;Sanjay&quot;
+age  = 32
+pi   = 3.14159
+
+# Basic substitution
+print(f&quot;Hello, {name}!&quot;)                   # Hello, Sanjay!
+
+# Expressions inside {}
+print(f&quot;Next year you&#39;ll be {age + 1}&quot;)    # Next year you&#39;ll be 33
+
+# Format specifiers
+print(f&quot;Pi is {pi:.2f}&quot;)                   # Pi is 3.14
+print(f&quot;Pi is {pi:&gt;10.2f}&quot;)               # Pi is       3.14  (right-aligned)
+print(f&quot;{1000000:,}&quot;)                      # 1,000,000
+
+# Debugging with = (Python 3.8+) ← very useful!
+x = 42
+print(f&quot;{x = }&quot;)     # x = 42  (prints name AND value)
+
+# Nested expressions
+data = [10, 20, 30]
+print(f&quot;Sum: {sum(data)}, Max: {max(data)}&quot;)</code></pre></div></div>
+<h3>🔡 Common String Methods</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span></div><pre><code class="language-python">text = &quot;  Hello, Python World!  &quot;
+
+print(text.strip())          # &quot;Hello, Python World!&quot;
+print(text.lower())          # &quot;  hello, python world!  &quot;
+print(text.upper())          # &quot;  HELLO, PYTHON WORLD!  &quot;
+print(text.replace(&quot;Python&quot;, &quot;AI&quot;))  # replace substring
+print(text.split(&quot;,&quot;))       # [&#39;  Hello&#39;, &#39; Python World!  &#39;]
+print(&quot;Python&quot; in text)      # True — membership test
+print(text.startswith(&quot;  Hello&quot;))    # True
+print(text.count(&quot;l&quot;))       # 3
+
+# Join is the inverse of split
+words = [&quot;Python&quot;, &quot;is&quot;, &quot;awesome&quot;]
+print(&quot; &quot;.join(words))       # &quot;Python is awesome&quot;</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">4️⃣ Booleans &amp; None</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span><span class="line-number">23</span></div><pre><code class="language-python"># Booleans
+is_active = True
+is_admin  = False
+
+# bool is a subclass of int!
+print(True + True)     # 2
+print(True * 5)        # 5
+
+# Truthy and Falsy values — MEMORISE THIS TABLE
+# Falsy: 0, 0.0, &quot;&quot;, [], {}, set(), None, False
+# Truthy: everything else
+
+print(bool(0))      # False
+print(bool(&quot;&quot;))     # False
+print(bool([]))     # False
+print(bool(None))   # False
+print(bool(&quot;hi&quot;))   # True
+print(bool([0]))    # True  ← a list with one item is truthy!
+
+# None — Python&#39;s &quot;nothing&quot;
+result = None
+print(result is None)        # True  ← always use `is` with None
+print(result == None)        # True  ← works but not idiomatic</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">5️⃣ Operators — The Complete Picture</h2>
+<h3>Arithmetic</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span></div><pre><code class="language-python">print(10 + 3)    # 13   addition
+print(10 - 3)    # 7    subtraction
+print(10 * 3)    # 30   multiplication
+print(10 / 3)    # 3.333...  true division (always float)
+print(10 // 3)   # 3    floor division (integer result)
+print(10 % 3)    # 1    modulo (remainder)
+print(10 ** 3)   # 1000 exponentiation
+
+# Useful trick: check even/odd
+print(7 % 2 == 0)    # False — odd
+print(8 % 2 == 0)    # True  — even</code></pre></div></div>
+<h3>Comparison</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span></div><pre><code class="language-python">print(5 == 5)    # True
+print(5 != 4)    # True
+print(5 &gt;  4)    # True
+print(5 &lt;  6)    # True
+print(5 &gt;= 5)    # True
+print(5 &lt;= 5)    # True
+
+# Chaining comparisons — very Pythonic!
+x = 15
+print(10 &lt; x &lt; 20)       # True — much cleaner than 10 &lt; x and x &lt; 20
+print(1 &lt; 2 &lt; 3 &lt; 4)     # True</code></pre></div></div>
+<h3>Logical</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span></div><pre><code class="language-python">print(True and False)    # False
+print(True or  False)    # True
+print(not True)          # False
+
+# Short-circuit evaluation — Python stops early!
+def risky():
+    raise Exception(&quot;BOOM&quot;)
+
+result = False and risky()   # risky() never called!
+result = True  or  risky()   # risky() never called!
+
+# Practical: default value pattern
+name = &quot;&quot;
+display = name or &quot;Anonymous&quot;   # &quot;Anonymous&quot; — because &quot;&quot; is falsy
+print(display)</code></pre></div></div>
+<h3>Identity &amp; Membership</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span></div><pre><code class="language-python"># Identity
+x = [1, 2, 3]
+y = x           # y points to SAME list
+z = [1, 2, 3]   # z is a DIFFERENT list with same values
+
+print(x is y)   # True  — same object
+print(x is z)   # False — different objects
+print(x == z)   # True  — same values
+
+# Membership
+fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;mango&quot;]
+print(&quot;apple&quot; in fruits)       # True
+print(&quot;grape&quot; not in fruits)   # True
+
+# Works on strings too
+print(&quot;Py&quot; in &quot;Python&quot;)        # True</code></pre></div></div>
+<h3>Bitwise (Important for AI/ML!)</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><pre><code class="language-python">a = 0b1010    # 10
+b = 0b1100    # 12
+
+print(bin(a &amp; b))   # 0b1000 = 8   AND  (both bits 1)
+print(bin(a | b))   # 0b1110 = 14  OR   (either bit 1)
+print(bin(a ^ b))   # 0b0110 = 6   XOR  (exactly one bit 1)
+print(bin(~a))      # -11          NOT  (flip all bits)
+print(bin(a &lt;&lt; 1))  # 0b10100 = 20 left shift (multiply by 2)
+print(bin(a &gt;&gt; 1))  # 0b101  = 5   right shift (divide by 2)</code></pre></div></div>
+<blockquote>
+<p>💡 <strong>Real-world use:</strong> Bitwise ops are used in image processing, ML flags, permissions systems, and low-level optimization.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">6️⃣ The Walrus Operator <code>:=</code> (Python 3.8+)</h2>
+<p>The walrus operator <strong>assigns AND returns</strong> a value in one expression. It&#39;s named after a walrus because <code>:=</code> looks like walrus eyes.</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span></div><pre><code class="language-python"># Old way — read data, check length separately
+data = [1, 2, 3, 4, 5]
+n = len(data)
+if n &gt; 3:
+    print(f&quot;Long list: {n} items&quot;)
+
+# New way — assign inside the condition
+if (n := len(data)) &gt; 3:
+    print(f&quot;Long list: {n} items&quot;)  # n is available here too!
+
+# ✨ Best use case: while loops that process and check
+import random
+
+while (value := random.randint(1, 10)) != 5:
+    print(f&quot;Got {value}, trying again...&quot;)
+print(f&quot;Finally got 5!&quot;)
+
+# Another great use: regex matching
+import re
+text = &quot;Order #12345 is ready&quot;
+if match := re.search(r&quot;#(\d+)&quot;, text):
+    print(f&quot;Order number: {match.group(1)}&quot;)   # 12345</code></pre></div></div>
+<blockquote>
+<p>⚠️ <strong>Gotcha:</strong> Don&#39;t overuse walrus. Use it when the assigned variable is needed <strong>both</strong> in the condition and the body. If you only need it in the body, a regular assignment is cleaner.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">7️⃣ Type Conversion</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span></div><pre><code class="language-python"># Implicit (Python does it for you)
+result = 5 + 2.0    # int + float = float (3.0)
+print(type(result)) # &lt;class &#39;float&#39;&gt;
+
+# Explicit (you do it intentionally)
+print(int(&quot;42&quot;))        # 42
+print(int(3.9))         # 3  ← truncates, does NOT round
+print(float(&quot;3.14&quot;))    # 3.14
+print(str(100))         # &quot;100&quot;
+print(bool(0))          # False
+print(list(&quot;abc&quot;))      # [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+
+# int with base
+print(int(&quot;1010&quot;, 2))   # 10 (binary to decimal)
+print(int(&quot;FF&quot;, 16))    # 255 (hex to decimal)</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">8️⃣ Useful Built-in Functions</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span></div><pre><code class="language-python"># Type inspection
+x = 3.14
+print(type(x))           # &lt;class &#39;float&#39;&gt;
+print(isinstance(x, float))   # True
+print(isinstance(x, (int, float)))  # True — checks multiple types!
+
+# Math built-ins
+print(abs(-42))          # 42
+print(round(3.567, 2))   # 3.57
+print(max(1, 5, 3))      # 5
+print(min(1, 5, 3))      # 1
+print(pow(2, 10))        # 1024  (same as 2**10)
+print(divmod(17, 5))     # (3, 2) — quotient and remainder together
+
+# Input
+# name = input(&quot;Enter your name: &quot;)  # always returns string!</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">📝 Exercises</h2>
+<h3>Exercise 1 — Type Detective</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><pre><code>Write a function type_report(val) that prints:
+  - The value
+  - Its type
+  - Whether it&#39;s truthy or falsy
+  - Its id
+
+Test with: 0, &quot;&quot;, [], 42, &quot;hello&quot;, None, True</code></pre></div></div>
+<h3>Exercise 2 — f-string Formatter</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><pre><code>Given: name=&quot;Praveen&quot;, salary=125000.5, rating=4.8756
+Print a formatted employee card:
+  ┌─────────────────────────────┐
+  │ Employee : Praveen          │
+  │ Salary   : ₹1,25,000.50    │
+  │ Rating   : 4.88 / 5.00     │
+  └─────────────────────────────┘</code></pre></div></div>
+<h3>Exercise 3 — Walrus in the Wild</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span></div><pre><code>Read numbers from the user (use input()) until they enter 0.
+After each entry, print the running total using the walrus operator.</code></pre></div></div>
+<h3>Exercise 4 — Bitwise Permissions</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><pre><code>Model a Unix-style permission system:
+  READ  = 0b100  (4)
+  WRITE = 0b010  (2)
+  EXEC  = 0b001  (1)
+
+Given a permission byte, use bitwise ops to check if a user
+can read, write, and execute. Then combine permissions with |.</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">✅ Summary — What You Learned</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key Takeaway</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Variables</td>
+<td>Labels pointing to objects; use <code>id()</code> to see memory address</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>Unlimited precision; underscores for readability</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>IEEE 754; never compare floats directly with <code>==</code></td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>Immutable Unicode; f-strings are the modern choice</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>Subclass of <code>int</code>; know your truthy/falsy values</td>
+</tr>
+<tr>
+<td><code>None</code></td>
+<td>Python&#39;s null; always compare with <code>is None</code></td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>Arithmetic, comparison, logical, bitwise, identity</td>
+</tr>
+<tr>
+<td>Walrus <code>:=</code></td>
+<td>Assign + return in one expression; use wisely</td>
+</tr>
+<tr>
+<td>Type conversion</td>
+<td><code>int()</code>, <code>float()</code>, <code>str()</code>, <code>bool()</code> — always explicit</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 style="background-color: #FBF3DB;">🔗 Coming Up Next</h2>
+<p><strong>→ M02: Control Flow &amp; Comprehensions</strong><br>Now that you know what data is, you&#39;ll learn how to make decisions and loop through collections — including Python&#39;s powerful <code>match/case</code> and list comprehensions.</p>
+
+</body>
+</html>
