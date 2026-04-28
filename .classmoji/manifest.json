@@ -1,7 +1,9 @@
 {
   "modules": {},
   "general": {
-    "pages": [],
+    "pages": [
+      "m01-syntax-data-types-operators"
+    ],
     "slides": []
   }
 }
