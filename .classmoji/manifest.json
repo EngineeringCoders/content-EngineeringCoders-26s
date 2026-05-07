@@ -1,9 +1,15 @@
 {
-  "modules": {},
+  "modules": {
+    "python-fundamentals": {
+      "pages": [
+        "m01-syntax-data-types-operators"
+      ],
+      "slides": [],
+      "assignments": {}
+    }
+  },
   "general": {
-    "pages": [
-      "m01-syntax-data-types-operators"
-    ],
+    "pages": [],
     "slides": []
   }
 }
