@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 85%;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #333;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<hr>
+<h1 style="background-color: #DDEBF1;">What is Dictionary Comprehension?</h1>
+<p>Dictionary comprehension is a concise and powerful way to create dictionaries using:</p>
+<ul>
+<li>loops</li>
+<li>conditions</li>
+<li>transformations</li>
+<li>filtering</li>
+</ul>
+<p>Instead of writing multiple lines using traditional loops, Python allows dictionary creation in a compact readable format.</p>
+<hr>
+<h1 style="background-color: #DDEBF1;">Traditional Dictionary Creation</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span></div><pre><code class="language-python">numbers = [1, 2, 3, 4]
+
+squares = {}
+
+for num in numbers:
+    squares[num] = num * num
+
+print(squares)</code></pre></div></div>
+<h2 style="background-color: #FBF3DB;">Output</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">{1: 1, 2: 4, 3: 9, 4: 16}</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Dictionary Comprehension Version</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span></div><pre><code class="language-python">numbers = [1, 2, 3, 4]
+
+squares = {
+    num: num * num
+    for num in numbers
+}
+
+print(squares)</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Syntax Structure</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span></div><pre><code class="language-python">{
+    key_expression: value_expression
+    for item in iterable
+}</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Flow Diagram of Dictionary Comprehension</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">mermaid</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span></div><pre><code class="language-mermaid">flowchart TD
+    A[Start Loop] --&gt; B[Pick Next Element]
+    B --&gt; C[Generate Key]
+    C --&gt; D[Generate Value]
+    D --&gt; E[Insert into Dictionary]
+    E --&gt; F{More Elements?}
+    F --&gt;|Yes| B
+    F --&gt;|No| G[Final Dictionary Ready]</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Step-by-Step Execution</h1>
+<h2 style="background-color: #FBF3DB;">Example</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><pre><code class="language-python">numbers = [1, 2, 3]
+
+result = {
+    num: num * num
+    for num in numbers
+}</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">Iteration 1</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span></div><pre><code class="language-text">num = 1
+key = 1
+value = 1</code></pre></div></div>
+<p>Dictionary becomes:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">{1: 1}</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">Iteration 2</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span></div><pre><code class="language-text">num = 2
+key = 2
+value = 4</code></pre></div></div>
+<p>Dictionary becomes:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">{1: 1, 2: 4}</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">Iteration 3</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span></div><pre><code class="language-text">num = 3
+key = 3
+value = 9</code></pre></div></div>
+<p>Final dictionary:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">{1: 1, 2: 4, 3: 9}</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Memory Visualization 🧩</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span></div><pre><code class="language-text">Dictionary Object
+
++-------------------+
+| Hash Table Buckets|
++-------------------+
+        |
+        |
+        v
++-------+--------+
+| Key   | Value  |
++-------+--------+
+| 1     | 1      |
+| 2     | 4      |
+| 3     | 9      |
++-------+--------+</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">How Python Stores Dictionaries Internally</h1>
+<p>Python dictionaries use:</p>
+<ul>
+<li>Hash tables</li>
+<li>Hash functions</li>
+<li>Buckets</li>
+<li>Key references</li>
+<li>Value references</li>
+</ul>
+<p>This allows:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-text">Very fast lookups → Average O(1)</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Time Complexity</h1>
+<h2 style="background-color: #FBF3DB;">Dictionary Creation</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-text">O(n)</code></pre></div></div>
+<p>Reason:</p>
+<ul>
+<li>each element processed once</li>
+<li>each insertion roughly O(1)</li>
+</ul>
+<hr>
+<h1 style="background-color: #DDEBF1;">Space Complexity</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-text">O(n)</code></pre></div></div>
+<p>Because:</p>
+<ul>
+<li>new dictionary stored in memory</li>
+<li>keys and values consume memory</li>
+</ul>
+<hr>
+<h1 style="background-color: #DDEBF1;">Dictionary Comprehension with Conditions</h1>
+<h2 style="background-color: #FBF3DB;">Example</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><pre><code class="language-python">numbers = [1,2,3,4,5,6]
+
+result = {
+    num: num * num
+    for num in numbers
+    if num % 2 == 0
+}
+
+print(result)</code></pre></div></div>
+<h2 style="background-color: #FBF3DB;">Output</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">{2: 4, 4: 16, 6: 36}</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Conditional Flow Diagram</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">mermaid</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><pre><code class="language-mermaid">flowchart TD
+    A[Start Loop] --&gt; B[Pick Element]
+    B --&gt; C{Condition True?}
+    C --&gt;|Yes| D[Generate Key &amp; Value]
+    D --&gt; E[Insert into Dictionary]
+    E --&gt; F{More Elements?}
+    C --&gt;|No| F
+    F --&gt;|Yes| B
+    F --&gt;|No| G[Return Dictionary]</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Internal Equivalent Code</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><pre><code class="language-python">result = {}
+
+for num in numbers:
+
+    if num % 2 == 0:
+
+        result[num] = num * num</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Real Memory Discussion 🧠</h1>
+<p>Dictionaries consume more memory than lists.</p>
+<p>Why?</p>
+<p>Because dictionaries store:</p>
+<ul>
+<li>keys</li>
+<li>values</li>
+<li>hash values</li>
+<li>bucket metadata</li>
+<li>collision handling structures</li>
+</ul>
+<hr>
+<h1 style="background-color: #DDEBF1;">List vs Dictionary Memory</h1>
+<h2 style="background-color: #FBF3DB;">List</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-text">[1][2][3][4]</code></pre></div></div>
+<p>Compact memory layout.</p>
+<hr>
+<h2 style="background-color: #FBF3DB;">Dictionary</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span></div><pre><code class="language-text">Hash Buckets
+
+Key -&gt; Hash -&gt; Value</code></pre></div></div>
+<p>Faster lookup but more RAM usage.</p>
+<hr>
+<h1 style="background-color: #DDEBF1;">Real Optimization Tradeoff ⚖️</h1>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Lookup Speed</th>
+<th>Memory Usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>List</td>
+<td>Slower</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Dictionary</td>
+<td>Faster</td>
+<td>Higher</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 style="background-color: #DDEBF1;">Why Dictionaries Are Powerful</h1>
+<h2 style="background-color: #FBF3DB;">Fast Lookup Example</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><pre><code class="language-python">student_marks = {
+    &quot;Rahul&quot;: 95,
+    &quot;Aman&quot;: 88
+}
+
+print(student_marks[&quot;Rahul&quot;])</code></pre></div></div>
+<p>Lookup happens using hashing.</p>
+<p>Average complexity:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-text">O(1)</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Real Engineering Use Cases 🌐</h1>
+<p>Dictionary comprehensions are used heavily in:</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Backend APIs</td>
+<td>JSON formatting</td>
+</tr>
+<tr>
+<td>Machine Learning</td>
+<td>Feature mapping</td>
+</tr>
+<tr>
+<td>Data Processing</td>
+<td>Filtering datasets</td>
+</tr>
+<tr>
+<td>System Design</td>
+<td>Lookup caches</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Aggregation</td>
+</tr>
+<tr>
+<td>Automation</td>
+<td>Dynamic configuration</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 style="background-color: #DDEBF1;">Nested Dictionary Comprehension</h1>
+<h2 style="background-color: #FBF3DB;">Example</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><pre><code class="language-python">result = {
+    x: {
+        y: x * y
+        for y in range(1, 4)
+    }
+    for x in range(1, 4)
+}
+
+print(result)</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Output</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span></div><pre><code class="language-python">{
+    1: {1:1, 2:2, 3:3},
+    2: {1:2, 2:4, 3:6},
+    3: {1:3, 2:6, 3:9}
+}</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Nested Flow Diagram</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">mermaid</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span></div><pre><code class="language-mermaid">flowchart TD
+    A[Outer Loop x] --&gt; B[Create Inner Dictionary]
+    B --&gt; C[Inner Loop y]
+    C --&gt; D[Generate x*y]
+    D --&gt; E[Insert into Inner Dictionary]
+    E --&gt; F{More y Values?}
+    F --&gt;|Yes| C
+    F --&gt;|No| G[Insert Inner Dictionary into Outer Dictionary]
+    G --&gt; H{More x Values?}
+    H --&gt;|Yes| A
+    H --&gt;|No| I[Final Nested Dictionary]</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Common Beginner Mistakes 🚨</h1>
+<h2 style="background-color: #FBF3DB;">Mistake 1: Complex Logic Inside Comprehension</h2>
+<p>Bad:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span></div><pre><code class="language-python">{
+    x: complicated_function(x)
+    for x in data
+    if multiple_conditions(x)
+}</code></pre></div></div>
+<p>Hard to debug and understand.</p>
+<hr>
+<h1 style="background-color: #DDEBF1;">Better Approach</h1>
+<p>Use normal loops if logic becomes complicated.</p>
+<p>Readable code is production-grade code.</p>
+<hr>
+<h1 style="background-color: #DDEBF1;">Mistake 2: Using Expensive Operations Inside Comprehension</h1>
+<h2 style="background-color: #FBF3DB;">Bad Example</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><pre><code class="language-python">words = [&quot;apple&quot;, &quot;banana&quot;, &quot;apple&quot;]
+
+freq = {
+    word: words.count(word)
+    for word in words
+}</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Why Bad?</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">words.count(word)</code></pre></div></div>
+<p>scans the list every time.</p>
+<p>Complexity becomes:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-text">O(n²)</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Better Approach</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><pre><code class="language-python">freq = {}
+
+for word in words:
+
+    if word in freq:
+        freq[word] += 1
+
+    else:
+        freq[word] = 1</code></pre></div></div>
+<p>Efficient:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-text">O(n)</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Memory Profiling Example 🔬</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span></div><pre><code class="language-python">import tracemalloc
+
+tracemalloc.start()
+
+result = {
+    x: x*x
+    for x in range(100000)
+}
+
+current, peak = tracemalloc.get_traced_memory()
+
+print(&quot;Current Memory:&quot;, current)
+print(&quot;Peak Memory:&quot;, peak)
+
+tracemalloc.stop()</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Understanding the Output</h1>
+<p>This helps measure:</p>
+<ul>
+<li>current RAM usage</li>
+<li>peak memory spikes</li>
+<li>dictionary growth impact</li>
+</ul>
+<hr>
+<h1 style="background-color: #DDEBF1;">Generator vs Dictionary Comprehension</h1>
+<p>Important distinction:</p>
+<h2 style="background-color: #FBF3DB;">Dictionary Comprehension</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">{x:x*x for x in range(1000000)}</code></pre></div></div>
+<p>Creates everything immediately.</p>
+<p>Consumes large memory.</p>
+<hr>
+<h1 style="background-color: #DDEBF1;">Generator Expression</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span></div><pre><code class="language-python">(x*x for x in range(1000000))</code></pre></div></div>
+<p>Produces values lazily.</p>
+<p>Tiny memory footprint.</p>
+<hr>
+<h1 style="background-color: #DDEBF1;">Mental Model 🚀</h1>
+<div class="code-block"><div class="code-header"><span class="code-lang">text</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span></div><pre><code class="language-text">List Comprehension
+→ Sequence Builder
+
+Dictionary Comprehension
+→ Lookup Table Builder
+
+Generator Expression
+→ Lazy Conveyor Belt</code></pre></div></div>
+<hr>
+<h1 style="background-color: #DDEBF1;">Final Takeaways</h1>
+<h2 style="background-color: #FBF3DB;">Use Dictionary Comprehension When:</h2>
+<ul>
+<li>transformation is simple</li>
+<li>readability remains clean</li>
+<li>single-pass creation needed</li>
+<li>lookup performance matters</li>
+</ul>
+<hr>
+<h1 style="background-color: #DDEBF1;">Avoid When:</h1>
+<ul>
+<li>nested logic becomes messy</li>
+<li>debugging becomes difficult</li>
+<li>memory usage is critical</li>
+<li>operations become computationally expensive</li>
+</ul>
+<hr>
+<h1 style="background-color: #DDEBF1;">Golden Rule ✨</h1>
+<p>Dictionary comprehensions are not just shorter syntax.</p>
+<p>They are:</p>
+<ul>
+<li>data transformation tools</li>
+<li>lookup table generators</li>
+<li>high-performance structures</li>
+<li>foundational building blocks for scalable backend systems</li>
+</ul>
+<p>Once understood deeply, they become one of Python’s most powerful weapons ⚡</p>
+
+</body>
+</html>
