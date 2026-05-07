@@ -1,0 +1,1868 @@
+{
+  "blocks": [
+    {
+      "id": "7c7291d5-00c0-4c38-8215-0894dbb243ed",
+      "type": "quote",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "\n",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Pillar 1 — Foundations",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " | Weekend 1 | 3 Hours\n",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Tags: ",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": "match/case",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " ",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": "for/else",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " ",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": "dict comp",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " ",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": "set comp",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " ",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": "generator expressions\n",
+          "styles": {
+            "code": true
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "538b482a-b07b-49d7-838d-1e56cd4d89f1",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "bc3f7da8-ee80-48f7-8c89-afe19d94b466",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "🎯 What You'll Learn",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "3c132422-969b-4920-9f22-6a0ea315e027",
+      "type": "bulletListItem",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Write clean conditional logic using ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "if/elif/else",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " and the new ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "match/case",
+          "styles": {
+            "code": true
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "ec632240-f78a-4f85-81b6-93297ff46001",
+      "type": "bulletListItem",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Loop effectively with ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "for",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ", ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "while",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ", ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "break",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ", ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "continue",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ", and the surprising ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "for/else",
+          "styles": {
+            "code": true
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "fd0e5ad9-7faf-4210-8d1f-0314284b89e4",
+      "type": "bulletListItem",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Compress 5-line loops into single-line ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "comprehensions",
+          "styles": {
+            "bold": true
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "a92427f0-7478-47a9-bf30-374027892112",
+      "type": "bulletListItem",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Understand the difference between list, dict, set comprehensions and generators",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "27ae762a-6035-493f-a448-d5379a7b2f10",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "d2a15865-9aa6-476a-8656-dbc3a335b328",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "🧠 Trainer Note — The Comprehension Reveal",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "47aa28a0-1471-4c6d-bb8a-9ea17e168484",
+      "type": "quote",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "\n",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Start with:",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " Write a loop on the board to square even numbers from 1–10.\nThen say: ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "\"Python lets you write this in one line — and it's faster.\"\n",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": "Rewrite as a list comprehension. Watch the \"ohhhh\" moment.\n",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "7771b976-4b60-45cb-b2fc-049e4d4b507b",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "f414db7e-bf33-4477-93bd-cc94eb15d3bd",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "1️⃣ if / elif / else",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "5947a377-fe1e-484d-851f-fa5663bfa3c5",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "score = 75\n\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"F\"\n\nprint(f\"Grade: {grade}\")   # Grade: C",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "a1837cab-72cf-4643-8c39-3bd0643c7908",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "02f03749-33f2-4642-affa-01ecf863add3",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 3,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "✨ Ternary (conditional expression)",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "60bf84de-c558-467c-83d4-1ed3803955bc",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# One-liner if/else\nage = 20\nstatus = \"adult\" if age >= 18 else \"minor\"\nprint(status)    # adult\n\n# Nest carefully — don't go too deep\nx = 5\nlabel = \"positive\" if x > 0 else (\"zero\" if x == 0 else \"negative\")",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "3c641d14-e44a-4534-9f73-c65395fd3817",
+      "type": "quote",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "\n💡 ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Rule of thumb:",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " If your ternary needs more than one level of nesting, use a regular ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "if/elif/else",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " block. Readability > cleverness.\n",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "31cd39d7-45ae-4f12-8706-55baf6b4f269",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "f9cab33e-4649-455f-a66f-f30497da7519",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "2️⃣ match / case (Python 3.10+)",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "ed41f4f9-341f-4fd5-a408-b7794d7a8ef8",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Python's ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "match/case",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " is ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "structural pattern matching",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " — far more powerful than a simple switch statement.",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "df896a20-63aa-4827-8436-7f91defb3c38",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Basic value matching\ncommand = \"quit\"\n\nmatch command:\n    case \"quit\":\n        print(\"Quitting...\")\n    case \"help\":\n        print(\"Showing help...\")\n    case \"start\" | \"run\":       # OR pattern\n        print(\"Starting...\")\n    case _:                     # wildcard — like 'else'\n        print(f\"Unknown command: {command}\")",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "03029aae-1dbe-49a9-a3e1-2acd62a1f60d",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "1e2c0a50-3545-4267-9fc9-83ac889b3085",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 3,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Matching on types and structures",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "c52e6577-602b-4910-8264-5e644932f363",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "def process(event):\n    match event:\n        case {\"type\": \"click\", \"x\": x, \"y\": y}:\n            print(f\"Click at ({x}, {y})\")\n        case {\"type\": \"keypress\", \"key\": key}:\n            print(f\"Key pressed: {key}\")\n        case [first, *rest]:\n            print(f\"List starting with {first}, {len(rest)} more\")\n        case int(n) if n > 0:\n            print(f\"Positive integer: {n}\")\n        case None:\n            print(\"Nothing received\")\n        case _:\n            print(\"Unknown event\")\n\nprocess({\"type\": \"click\", \"x\": 100, \"y\": 200})\nprocess([1, 2, 3, 4])\nprocess(42)",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "1a6e4fce-f5e7-4f4e-af25-8177f45e57d5",
+      "type": "quote",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "\n💡 ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Real use case:",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " match/case is perfect for handling API responses, command parsers, game state machines, and event-driven code.\n",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "d73c0329-54ca-42ec-b665-2df6006a7074",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "9344bc91-fa66-4e26-a340-c60cd45deeb5",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "3️⃣ for Loops",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "24b21709-7c61-44d9-b520-dbff1ccc0921",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Iterate over any iterable\nfruits = [\"apple\", \"banana\", \"mango\"]\nfor fruit in fruits:\n    print(fruit)\n\n# enumerate — get index AND value\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")\n\n# enumerate with custom start\nfor i, fruit in enumerate(fruits, start=1):\n    print(f\"{i}. {fruit}\")   # 1. apple, 2. banana ...\n\n# range — generate numbers\nfor n in range(5):         # 0, 1, 2, 3, 4\n    print(n)\n\nfor n in range(2, 10, 2):  # 2, 4, 6, 8  (start, stop, step)\n    print(n)\n\n# zip — iterate multiple lists together\nnames  = [\"Alice\", \"Bob\", \"Charlie\"]\nscores = [95, 80, 88]\nfor name, score in zip(names, scores):\n    print(f\"{name}: {score}\")\n\n# zip stops at the shortest list!\n# Use itertools.zip_longest to avoid truncation",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "4d441119-b866-4aa0-9b29-6d5537f67701",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "37dc16cc-4943-47c7-be5e-8f61031bec77",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 3,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "🔁 The Surprising for / else",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "117a8b89-678f-44c5-967f-ce5251a43e13",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# The else block runs if the loop completed WITHOUT a break\ndef find_prime(numbers):\n    for n in numbers:\n        for divisor in range(2, n):\n            if n % divisor == 0:\n                break           # Not prime\n        else:\n            print(f\"{n} is prime!\")   # Only runs if inner loop didn't break\n\nfind_prime([2, 3, 4, 5, 6, 7])\n\n# Practical use: search with break\nneedle = \"admin\"\nusers  = [\"alice\", \"bob\", \"charlie\"]\n\nfor user in users:\n    if user == needle:\n        print(\"Found admin!\")\n        break\nelse:\n    print(\"Admin not found\")    # Runs because we never broke out",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "9f3f5711-5803-4a50-abd2-67799bcbb24f",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "a0e725cf-cfe1-4af9-9efd-2cd2f4595bf4",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "4️⃣ while Loops",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "f35a6818-cefa-4964-8219-753ccce89093",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Basic\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n\n# break and continue\nwhile True:\n    user_input = input(\"Enter number (0 to quit): \")\n    n = int(user_input)\n    if n == 0:\n        break               # exit the loop\n    if n < 0:\n        continue            # skip the rest, go back to top\n    print(f\"Square: {n ** 2}\")\n\n# while / else\nattempts = 0\nwhile attempts < 3:\n    password = input(\"Password: \")\n    if password == \"secret\":\n        print(\"Access granted!\")\n        break\n    attempts += 1\nelse:\n    print(\"Too many failed attempts. Account locked.\")",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "bea99a68-c47e-4cbf-8b3a-42d0d9798cbe",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "def181cc-6dd0-4d2f-8fee-d72a7205b804",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "5️⃣ List Comprehensions ⚡",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "3292a2cf-a795-4afe-975a-1f83e7b5dc8c",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "The most loved Python feature. Turns a filter+transform loop into one clean line.",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "60484751-218c-4965-b3e5-a7814770ae35",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Traditional loop\nsquares = []\nfor x in range(10):\n    squares.append(x ** 2)\n\n# List comprehension — same result, cleaner\nsquares = [x ** 2 for x in range(10)]\nprint(squares)   # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# With filter (if condition)\nevens = [x for x in range(20) if x % 2 == 0]\nprint(evens)     # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n\n# Transform + filter together\neven_squares = [x**2 for x in range(10) if x % 2 == 0]\nprint(even_squares)   # [0, 4, 16, 36, 64]\n\n# With if/else (ternary inside comprehension)\nlabels = [\"even\" if x % 2 == 0 else \"odd\" for x in range(6)]\nprint(labels)   # ['even', 'odd', 'even', 'odd', 'even', 'odd']\n\n# Nested comprehension (flattening a 2D list)\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflat = [num for row in matrix for num in row]\nprint(flat)   # [1, 2, 3, 4, 5, 6, 7, 8, 9]",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "b61bcd5d-8b75-4364-9926-01439d6022ff",
+      "type": "quote",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "\n⚠️ ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Gotcha:",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " If a comprehension spans more than 2 lines, a for loop is probably clearer. Comprehensions are for conciseness, not cleverness.\n",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "5d44e17d-86f5-4b22-a9cf-77e356ce971e",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "5f83a3a4-b6b2-47c9-871d-8b41359c3cef",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "6️⃣ Dict Comprehensions",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "ec56b151-6598-4870-8eba-1850d017417d",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Build a dict from scratch\nsquares_dict = {x: x**2 for x in range(5)}\nprint(squares_dict)   # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n# Flip keys and values\noriginal = {\"a\": 1, \"b\": 2, \"c\": 3}\nflipped  = {v: k for k, v in original.items()}\nprint(flipped)   # {1: 'a', 2: 'b', 3: 'c'}\n\n# Filter items while building\nprices = {\"apple\": 50, \"banana\": 20, \"mango\": 80, \"grape\": 30}\nexpensive = {k: v for k, v in prices.items() if v > 25}\nprint(expensive)   # {'apple': 50, 'mango': 80, 'grape': 30}\n\n# Normalize keys (real world: cleaning API responses)\nraw = {\"  Name  \": \"Alice\", \"AGE\": 30, \"CITY \": \"Hyderabad\"}\nclean = {k.strip().lower(): v for k, v in raw.items()}\nprint(clean)   # {'name': 'Alice', 'age': 30, 'city': 'Hyderabad'}",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "a02fff80-7584-4d20-b2c2-043ba519c5f0",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "8d2dce64-5bf3-4fe4-8835-5067aeb3ac9e",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "7️⃣ Set Comprehensions",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "9b292f89-5d7e-41bf-ab9d-12e3fac552b7",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Unique squares\nunique_remainders = {x % 5 for x in range(20)}\nprint(unique_remainders)   # {0, 1, 2, 3, 4}  (order may vary)\n\n# Deduplicate while transforming\nwords = [\"Hello\", \"WORLD\", \"hello\", \"Python\", \"python\"]\nunique_lower = {word.lower() for word in words}\nprint(unique_lower)   # {'hello', 'world', 'python'}",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "1f25b5e6-25b8-457b-b28f-db2862670f84",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "4913fd0f-69ab-4c01-9989-b069c2a1f60a",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "8️⃣ Generator Expressions",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "74689121-beb6-4c86-a911-33030b94129e",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Like list comprehensions, but ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "lazy",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " — they generate values one at a time. Perfect for large datasets.",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "dbacd21d-8125-43e6-984e-e908b4db1589",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# List comprehension — creates ALL items in memory immediately\nsquares_list = [x**2 for x in range(1_000_000)]   # Uses ~8MB RAM\n\n# Generator expression — creates items on-demand\nsquares_gen  = (x**2 for x in range(1_000_000))   # Uses ~200 bytes!\n\n# How to consume a generator\nprint(next(squares_gen))   # 0\nprint(next(squares_gen))   # 1\nprint(next(squares_gen))   # 4\n\n# Or loop through it\ntotal = sum(x**2 for x in range(1000))   # No [] needed inside sum()!\n\n# Real use: processing large files line by line\n# long_lines = (line for line in open(\"bigfile.txt\") if len(line) > 100)",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "d451f76c-02cc-44ab-80a8-8895baafb363",
+      "type": "quote",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "\n💡 ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "When to use which:\n\nList comp",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "[...]",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " — when you need the full result in memory, or need to index into it\n",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Generator",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "(...)",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " — when you're iterating once and memory matters\n",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "Dict/Set comp",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": " — when building dictionaries or unique collections\n\n",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "58b7de7b-02fa-4aa1-bb56-6fb4daa2a6e6",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "277cb39c-63df-46bd-8c24-5b52149d6452",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "📝 Exercises",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "24d1c648-6d28-457e-b205-28b6869fcb39",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "63ba6ff0-eeaa-473c-9d38-ee15d47247dd",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 3,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Exercise 1 — Grade Classifier",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "2752299d-5d83-4a7c-b81d-a17bd00c7be5",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Write a function classify(score) using match/case that returns:\n  90–100: \"Distinction\"\n  75–89:  \"Merit\"\n  60–74:  \"Pass\"\n  0–59:   \"Fail\"\n  else:   \"Invalid score\"\n\nBonus: handle the case where score is a string (like \"seventy\")",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "9e836944-7adc-4f55-a513-65a5eb92dcd6",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "fe67cdaa-3dca-45fa-b728-b2bf3138dfbf",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 3,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Exercise 2 — Comprehension Workout",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "f9eed7da-54b6-42b0-926c-5de919bc0be4",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Given: numbers = list(range(1, 51))   # 1 to 50\n\nUsing comprehensions (no for loops!):\n  a) All numbers divisible by 3 OR 5\n  b) A dict of {number: \"fizz\"/\"buzz\"/\"fizzbuzz\"/\"number\"}\n  c) A set of unique first digits of squares of all numbers",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "491ad8c6-9aaf-4c50-99e5-5bca6aac64d5",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "c28b69a1-f41d-4eb6-9b2c-e5399a60c431",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 3,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Exercise 3 — for/else Search",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "1688759a-156a-4da6-8687-cd3fc1a82d73",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Write a function find_user(users, username) that:\n  - Loops through a list of user dicts [{\"name\": ..., \"active\": ...}]\n  - Returns the user if found AND active\n  - Prints \"User found but inactive\" if found but inactive\n  - Uses for/else to print \"User not found\" if not in list at all",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "64f58ccd-219a-43df-a23c-d58192f4ed00",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "927110ce-6531-4748-a784-a817142fbe61",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 3,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Exercise 4 — Generator Pipeline",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "9d7aa332-83c5-498c-a0d6-85a22489a236",
+      "type": "codeBlock",
+      "props": {
+        "language": "python"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Build a lazy pipeline (using generator expressions):\n  1. Numbers 1 to 10,000\n  2. Filter: only primes\n  3. Transform: square them\n  4. Take: first 10\n\nPrint the first 10 squared primes without using any lists.",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "8304d7cb-d8d1-4b82-8344-496b10c593b2",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "c905f439-4ba4-421e-864a-031546f84b71",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "✅ Summary",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "d3d8ad2e-2876-4732-8df5-ef806c6c602b",
+      "type": "table",
+      "props": {
+        "textColor": "default"
+      },
+      "content": {
+        "type": "tableContent",
+        "columnWidths": [
+          null,
+          null
+        ],
+        "headerRows": 1,
+        "rows": [
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Concept",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Key Takeaway",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "if/elif/else",
+                    "styles": {
+                      "code": true
+                    }
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ternary for simple cases, full block for complex logic",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "match/case",
+                    "styles": {
+                      "code": true
+                    }
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Structural pattern matching — handles types, dicts, lists",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "for/else",
+                    "styles": {
+                      "code": true
+                    }
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "else",
+                    "styles": {
+                      "code": true
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " runs only if no ",
+                    "styles": {}
+                  },
+                  {
+                    "type": "text",
+                    "text": "break",
+                    "styles": {
+                      "code": true
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " occurred",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "while/else",
+                    "styles": {
+                      "code": true
+                    }
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Same pattern — great for \"try N times\" logic",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "List comp",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "[expr for x in it if cond]",
+                    "styles": {
+                      "code": true
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " — concise, readable",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dict comp",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "{k: v for k, v in it.items() if cond}",
+                    "styles": {
+                      "code": true
+                    }
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set comp",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "{expr for x in it}",
+                    "styles": {
+                      "code": true
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " — auto-deduplicates",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Generator",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              },
+              {
+                "type": "tableCell",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "(expr for x in it)",
+                    "styles": {
+                      "code": true
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": " — lazy, memory efficient",
+                    "styles": {}
+                  }
+                ],
+                "props": {
+                  "colspan": 1,
+                  "rowspan": 1,
+                  "backgroundColor": "default",
+                  "textColor": "default",
+                  "textAlignment": "left"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "children": []
+    },
+    {
+      "id": "a7c1d7e6-20d4-44e7-953b-ed97ea44a1c7",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    },
+    {
+      "id": "4870b2f5-942f-4512-98c1-8f442ae0f651",
+      "type": "heading",
+      "props": {
+        "backgroundColor": "rgb(251, 243, 219)",
+        "textColor": "default",
+        "textAlignment": "left",
+        "level": 2,
+        "isToggleable": false
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "🔗 Coming Up Next",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "ff1b981a-8c66-4add-9932-4c2c847a74d6",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "→ M03: Functions — Args, Closures & Scope\n",
+          "styles": {
+            "bold": true
+          }
+        },
+        {
+          "type": "text",
+          "text": "Control flow tells Python ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "what to do",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ". Functions tell Python ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "how to package and reuse it",
+          "styles": {
+            "italic": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ". We'll go deep on ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "*args",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ", ",
+          "styles": {}
+        },
+        {
+          "type": "text",
+          "text": "**kwargs",
+          "styles": {
+            "code": true
+          }
+        },
+        {
+          "type": "text",
+          "text": ", closures, and the LEGB rule.",
+          "styles": {}
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "53deb18e-2413-4d30-a94b-1847d36421ca",
+      "type": "paragraph",
+      "props": {
+        "backgroundColor": "default",
+        "textColor": "default",
+        "textAlignment": "left"
+      },
+      "content": [],
+      "children": []
+    }
+  ]
+}
