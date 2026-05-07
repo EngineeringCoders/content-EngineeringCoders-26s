@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 85%;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #333;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<blockquote>
+<p><strong>Pillar 1 — Foundations</strong> | Weekend 2 | 3 Hours<br><em>Tags: <code>*args</code> <code>**kwargs</code> <code>positional-only</code> <code>closures</code> <code>LEGB</code> <code>lambda</code></em></p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">🎯 What You&#39;ll Learn</h2>
+<ul>
+<li>Define functions with every flavour of argument: positional, keyword, default, <code>*args</code>, <code>**kwargs</code></li>
+<li>Enforce argument style with <code>/</code> and <code>*</code> separators</li>
+<li>Understand <strong>scope</strong> using the LEGB rule</li>
+<li>Build <strong>closures</strong> — functions that remember their environment</li>
+<li>Write lambda functions and know when NOT to use them</li>
+</ul>
+<hr>
+<h2 style="background-color: #FBF3DB;">🧠 Trainer Note — The &quot;Why Functions?&quot; Moment</h2>
+<blockquote>
+<p><strong>Say this:</strong> &quot;Functions are not just about reuse. They are about naming. When you extract logic into a function and give it a good name, you turn code into documentation.&quot;</p>
+<p>Show two versions of the same code — one messy blob, one split into named functions. Ask which is easier to understand. They&#39;ll always pick the named one.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">1️⃣ Defining Functions</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span></div><pre><code class="language-python"># Basic function
+def greet(name):
+    &quot;&quot;&quot;Return a greeting string. This is a docstring.&quot;&quot;&quot;
+    return f&quot;Hello, {name}!&quot;
+
+print(greet(&quot;Praveen&quot;))   # Hello, Praveen!
+
+# Functions always return something — default is None
+def do_nothing():
+    pass
+
+result = do_nothing()
+print(result)   # None
+
+# Multiple return values (actually returns a tuple)
+def min_max(numbers):
+    return min(numbers), max(numbers)
+
+lo, hi = min_max([3, 1, 9, 2, 7])
+print(lo, hi)   # 1 9</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">2️⃣ Argument Types — The Full Picture</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span></div><pre><code class="language-python"># ── 1. Positional arguments ───────────────────────
+def power(base, exponent):
+    return base ** exponent
+
+power(2, 10)    # base=2, exponent=10 (by position)
+power(10, 2)    # base=10, exponent=2  ← ORDER MATTERS
+
+# ── 2. Keyword arguments ─────────────────────────
+power(base=2, exponent=10)        # same as power(2, 10)
+power(exponent=10, base=2)        # order doesn&#39;t matter with keywords
+
+# ── 3. Default arguments ─────────────────────────
+def connect(host, port=5432, timeout=30):
+    print(f&quot;Connecting to {host}:{port} (timeout={timeout}s)&quot;)
+
+connect(&quot;localhost&quot;)                  # port=5432, timeout=30
+connect(&quot;localhost&quot;, 3306)            # port=3306, timeout=30
+connect(&quot;localhost&quot;, timeout=60)      # port=5432, timeout=60</code></pre></div></div>
+<blockquote>
+<p>⚠️ <strong>Classic gotcha — Mutable Default Arguments</strong></p>
+</blockquote>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span></div><pre><code class="language-python"># WRONG — the list is created ONCE at function definition!
+def add_item(item, bag=[]):
+    bag.append(item)
+    return bag
+
+print(add_item(&quot;apple&quot;))    # [&#39;apple&#39;]
+print(add_item(&quot;banana&quot;))   # [&#39;apple&#39;, &#39;banana&#39;] ← BUG! shared list!
+
+# CORRECT — use None as default, create inside function
+def add_item(item, bag=None):
+    if bag is None:
+        bag = []
+    bag.append(item)
+    return bag
+
+print(add_item(&quot;apple&quot;))    # [&#39;apple&#39;]
+print(add_item(&quot;banana&quot;))   # [&#39;banana&#39;] ← correct!</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">3️⃣ *args and **kwargs</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span><span class="line-number">23</span><span class="line-number">24</span></div><pre><code class="language-python"># *args — collect extra positional args as a tuple
+def total(*numbers):
+    print(type(numbers))   # &lt;class &#39;tuple&#39;&gt;
+    return sum(numbers)
+
+print(total(1, 2, 3))          # 6
+print(total(10, 20, 30, 40))   # 100
+
+# **kwargs — collect extra keyword args as a dict
+def build_profile(**info):
+    print(type(info))   # &lt;class &#39;dict&#39;&gt;
+    for key, val in info.items():
+        print(f&quot;  {key}: {val}&quot;)
+
+build_profile(name=&quot;Praveen&quot;, role=&quot;AI Engineer&quot;, city=&quot;Hyderabad&quot;)
+
+# Combined — the full signature pattern
+def mega_function(required, *args, keyword_only=&quot;default&quot;, **kwargs):
+    print(f&quot;required: {required}&quot;)
+    print(f&quot;extra positional: {args}&quot;)
+    print(f&quot;keyword_only: {keyword_only}&quot;)
+    print(f&quot;extra keyword: {kwargs}&quot;)
+
+mega_function(&quot;must&quot;, 1, 2, 3, keyword_only=&quot;custom&quot;, x=10, y=20)</code></pre></div></div>
+<h3>Unpacking with * and **</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span></div><pre><code class="language-python"># Spread a list into function arguments
+nums = [2, 10]
+print(power(*nums))     # same as power(2, 10)
+
+# Spread a dict into function arguments
+config = {&quot;host&quot;: &quot;localhost&quot;, &quot;port&quot;: 5432}
+connect(**config)       # same as connect(host=&quot;localhost&quot;, port=5432)
+
+# Merge dicts (Python 3.9+)
+defaults = {&quot;color&quot;: &quot;red&quot;, &quot;size&quot;: 10}
+custom   = {&quot;size&quot;: 20, &quot;weight&quot;: 5}
+merged   = {**defaults, **custom}
+print(merged)   # {&#39;color&#39;: &#39;red&#39;, &#39;size&#39;: 20, &#39;weight&#39;: 5}</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">4️⃣ Positional-Only and Keyword-Only Parameters</h2>
+<p>Python 3.8+ lets you enforce how arguments must be passed:</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span></div><pre><code class="language-python"># / means: everything BEFORE this must be positional
+# * means: everything AFTER this must be keyword
+
+def strict(pos_only, /, normal, *, kw_only):
+    print(pos_only, normal, kw_only)
+
+strict(1, 2, kw_only=3)          # OK
+strict(1, normal=2, kw_only=3)   # OK
+# strict(pos_only=1, ...)         # TypeError! pos_only can&#39;t be keyword
+# strict(1, 2, 3)                 # TypeError! kw_only must be keyword
+
+# Real example: len() is positional-only — len(obj=x) doesn&#39;t work
+# This prevents API breakage when you rename parameters
+def calculate(x, y, /, *, rounding=2):
+    return round(x + y, rounding)
+
+print(calculate(1.111, 2.222, rounding=1))   # 3.3</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">5️⃣ Scope — The LEGB Rule</h2>
+<p>Python resolves names in this exact order: <strong>L</strong>ocal → <strong>E</strong>nclosing → <strong>G</strong>lobal → <strong>B</strong>uilt-in</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span></div><pre><code class="language-python">x = &quot;global&quot;      # G — global scope
+
+def outer():
+    x = &quot;enclosing&quot;   # E — enclosing scope
+
+    def inner():
+        x = &quot;local&quot;   # L — local scope
+        print(x)      # &quot;local&quot;
+
+    inner()
+    print(x)           # &quot;enclosing&quot;
+
+outer()
+print(x)               # &quot;global&quot;
+
+# Built-in (B) — Python&#39;s pre-defined names
+print(len([1, 2, 3]))   # len is a built-in</code></pre></div></div>
+<h3>global and nonlocal keywords</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span><span class="line-number">23</span></div><pre><code class="language-python">counter = 0
+
+def increment():
+    global counter       # reach up to global scope
+    counter += 1
+
+increment()
+increment()
+print(counter)   # 2
+
+# nonlocal — reach up to enclosing (not global) scope
+def make_counter():
+    count = 0
+    def increment():
+        nonlocal count   # reach to enclosing scope
+        count += 1
+        return count
+    return increment
+
+my_counter = make_counter()
+print(my_counter())   # 1
+print(my_counter())   # 2
+print(my_counter())   # 3</code></pre></div></div>
+<blockquote>
+<p>💡 <strong>Rule:</strong> Avoid <code>global</code> in production code. It creates hidden dependencies. Use classes, closures, or pass data explicitly.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">6️⃣ Closures — Functions That Remember</h2>
+<p>A closure is a function that <strong>captures variables from its enclosing scope</strong>, even after that scope has finished executing.</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span><span class="line-number">21</span><span class="line-number">22</span><span class="line-number">23</span><span class="line-number">24</span><span class="line-number">25</span><span class="line-number">26</span><span class="line-number">27</span><span class="line-number">28</span></div><pre><code class="language-python">def make_multiplier(factor):
+    &quot;&quot;&quot;Returns a function that multiplies by &#39;factor&#39;&quot;&quot;&quot;
+    def multiply(number):
+        return number * factor    # &#39;factor&#39; is captured from enclosing scope
+    return multiply
+
+double = make_multiplier(2)
+triple = make_multiplier(3)
+
+print(double(10))   # 20
+print(triple(10))   # 30
+
+# The closure remembers &#39;factor&#39; even after make_multiplier() finished!
+print(double.__closure__[0].cell_contents)   # 2
+
+# Real-world use: configurable functions
+def make_validator(min_val, max_val):
+    def validate(value):
+        if min_val &lt;= value &lt;= max_val:
+            return True
+        raise ValueError(f&quot;{value} must be between {min_val} and {max_val}&quot;)
+    return validate
+
+age_validator    = make_validator(0, 120)
+salary_validator = make_validator(10000, 10_000_000)
+
+age_validator(25)          # True
+salary_validator(500)      # ValueError!</code></pre></div></div>
+<h3>⚠️ The Classic Closure Loop Bug</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><pre><code class="language-python"># WRONG — all lambdas capture the same &#39;i&#39; variable
+functions = [lambda: i for i in range(5)]
+print([f() for f in functions])   # [4, 4, 4, 4, 4]  ← Bug!
+
+# CORRECT — capture by default argument (creates a new binding)
+functions = [lambda i=i: i for i in range(5)]
+print([f() for f in functions])   # [0, 1, 2, 3, 4]  ← Correct!</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">7️⃣ Lambda Functions</h2>
+<p>Anonymous functions for simple, one-expression operations.</p>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span><span class="line-number">14</span><span class="line-number">15</span><span class="line-number">16</span><span class="line-number">17</span><span class="line-number">18</span><span class="line-number">19</span><span class="line-number">20</span></div><pre><code class="language-python"># Basic lambda
+square = lambda x: x ** 2
+print(square(5))   # 25
+
+# Used inline with sorted, map, filter
+students = [
+    {&quot;name&quot;: &quot;Alice&quot;, &quot;grade&quot;: 88},
+    {&quot;name&quot;: &quot;Bob&quot;,   &quot;grade&quot;: 92},
+    {&quot;name&quot;: &quot;Carol&quot;, &quot;grade&quot;: 79},
+]
+
+# Sort by grade descending
+ranked = sorted(students, key=lambda s: s[&quot;grade&quot;], reverse=True)
+for s in ranked:
+    print(f&quot;{s[&#39;name&#39;]}: {s[&#39;grade&#39;]}&quot;)
+
+# map and filter with lambda
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+evens   = list(filter(lambda x: x % 2 == 0, numbers))
+doubled = list(map(lambda x: x * 2, numbers))</code></pre></div></div>
+<blockquote>
+<p>⚠️ <strong>When NOT to use lambda:</strong><br>If you need to assign it to a variable and reuse it → use <code>def</code>.<br>If it needs more than one expression → use <code>def</code>.<br>Lambda is for short, throwaway functions passed to <code>sorted</code>, <code>map</code>, <code>filter</code>.</p>
+</blockquote>
+<hr>
+<h2 style="background-color: #FBF3DB;">8️⃣ Function Annotations (Preview of M12)</h2>
+<div class="code-block"><div class="code-header"><span class="code-lang">Python</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span></div><pre><code class="language-python">def greet(name: str, times: int = 1) -&gt; str:
+    return (f&quot;Hello, {name}! &quot; * times).strip()
+
+# Annotations are stored in __annotations__
+print(greet.__annotations__)
+# {&#39;name&#39;: &lt;class &#39;str&#39;&gt;, &#39;times&#39;: &lt;class &#39;int&#39;&gt;, &#39;return&#39;: &lt;class &#39;str&#39;&gt;}
+
+# Python does NOT enforce these at runtime — that&#39;s mypy&#39;s job
+greet(42, &quot;wrong&quot;)   # Works! Python doesn&#39;t check</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">📝 Exercises</h2>
+<h3>Exercise 1 — Argument Flavours</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span></div><pre><code>Write a function order(item, quantity, /, *, discount=0, **extras) that:
+  - item and quantity MUST be positional
+  - discount MUST be keyword
+  - Any extra info (e.g. color=&quot;red&quot;) goes into extras
+
+Print a formatted order summary.
+Test with: order(&quot;pizza&quot;, 2, discount=10, size=&quot;large&quot;, crust=&quot;thin&quot;)</code></pre></div></div>
+<h3>Exercise 2 — Closure Cash Register</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><pre><code>Build a cash_register() function that returns THREE closures:
+  - add(amount)     → adds to running total
+  - discount(pct)   → subtracts pct% from running total
+  - total()         → returns current total
+
+The three functions share state via a mutable container (use a list [0]).</code></pre></div></div>
+<h3>Exercise 3 — Scope Detective</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span><span class="line-number">7</span><span class="line-number">8</span><span class="line-number">9</span><span class="line-number">10</span><span class="line-number">11</span><span class="line-number">12</span><span class="line-number">13</span></div><pre><code>Without running it, predict the output of this code:
+  x = 10
+  def foo():
+      x = 20
+      def bar():
+          print(x)
+      bar()
+      x = 30
+      bar()
+  foo()
+  print(x)
+
+Then run it. Were you right? Why?</code></pre></div></div>
+<h3>Exercise 4 — Configurable Sorter</h3>
+<div class="code-block"><div class="code-header"><span class="code-lang">Code</span></div><div class="code-body"><div class="line-numbers"><span class="line-number">1</span><span class="line-number">2</span><span class="line-number">3</span><span class="line-number">4</span><span class="line-number">5</span><span class="line-number">6</span></div><pre><code>Write make_sorter(key, reverse=False) that returns a function.
+The returned function takes a list of dicts and sorts them.
+
+sorter = make_sorter(&quot;age&quot;, reverse=True)
+people = [{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}, {&quot;name&quot;: &quot;Bob&quot;, &quot;age&quot;: 30}]
+print(sorter(people))   # Bob first (oldest)</code></pre></div></div>
+<hr>
+<h2 style="background-color: #FBF3DB;">✅ Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key Takeaway</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Default args</td>
+<td>Never use mutable defaults — use <code>None</code> and create inside</td>
+</tr>
+<tr>
+<td><code>*args</code></td>
+<td>Collects extra positional into a <strong>tuple</strong></td>
+</tr>
+<tr>
+<td><code>**kwargs</code></td>
+<td>Collects extra keyword into a <strong>dict</strong></td>
+</tr>
+<tr>
+<td><code>/</code> and <code>*</code></td>
+<td>Enforce positional-only and keyword-only parameters</td>
+</tr>
+<tr>
+<td>LEGB</td>
+<td>Local → Enclosing → Global → Built-in resolution order</td>
+</tr>
+<tr>
+<td><code>global</code></td>
+<td>Avoid it — use closures or classes instead</td>
+</tr>
+<tr>
+<td><code>nonlocal</code></td>
+<td>Reach into enclosing scope (not global)</td>
+</tr>
+<tr>
+<td>Closures</td>
+<td>Functions that remember their creation environment</td>
+</tr>
+<tr>
+<td>Lambda</td>
+<td>Short anonymous functions — use sparingly</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 style="background-color: #FBF3DB;">🔗 Coming Up Next</h2>
+<p><strong>→ M04: Collections — All of Them</strong><br>Lists, tuples, sets, dicts are just the start. We&#39;ll go deep into <code>Counter</code>, <code>defaultdict</code>, <code>deque</code>, <code>namedtuple</code>, <code>OrderedDict</code> and when to reach for each one.</p>
+
+</body>
+</html>
