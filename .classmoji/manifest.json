@@ -10,7 +10,8 @@
   },
   "general": {
     "pages": [
-      "m02-control-flow-comprehensions"
+      "m02-control-flow-comprehensions",
+      "m03-functions-args-closures-scope"
     ],
     "slides": []
   }
