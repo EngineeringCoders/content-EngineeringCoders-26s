@@ -12,8 +12,6 @@
     "pages": [
       "m02-control-flow-comprehensions"
     ],
-    "slides": [
-      "functions-in-python"
-    ]
+    "slides": []
   }
 }
